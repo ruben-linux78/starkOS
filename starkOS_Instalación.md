@@ -88,7 +88,7 @@ ln -sf /usr/share/zoneinfo/Region/City /etc/localetime
 
 hwclock --systohc
 
-Configurar locales.
+- Configurar locales.
 
 vim /etc/locales
 
@@ -132,7 +132,7 @@ stark sysup
 
 stark install linux
 
-- Nota: “remplaza 'linux' por 'linux-lts' si prefieres la versión lts”
+- Nota: “remplaza 'linux' por 'linux-lts' si prefieres la versión lts”.
 
 - Configurar un gestor de arranque, por ejemplo: grub.
 
@@ -142,17 +142,17 @@ grub-install /dev/sdX
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
-Nota: “remplaza 'X' con tu partición de arranque”
+Nota: “remplaza 'X' con tu partición de arranque”.
 
-2 - EFI:
+2 - EFI: (comprobar antes si tienes efivars).                                
 
-df -Th                                (para comprobar efivars)
-
-mountpoint /sys/firmware/efi/efivars  (comprobar si tienes efivars)
+mountpoint /sys/firmware/efi/efivars  
 
 - Montar el directorio efivars.
 
 mount -v -t efivarfs none /sys/firmware/efi/efivars
+
+df -Th
 
 - Instala el paquete 'grub-efi'.
 
