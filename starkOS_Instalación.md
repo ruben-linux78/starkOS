@@ -6,7 +6,7 @@
 
 - Crea y prepara las particiones:
 
-- BIOS system con MBR.
+* BIOS system con MBR.
 
 cfdisk
 
