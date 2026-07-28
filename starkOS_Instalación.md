@@ -6,7 +6,7 @@
 
 - Crea y prepara las particiones:
 
-1 BIOS system con MBR.
+1 - BIOS system con MBR.
 
 cfdisk
 
@@ -20,7 +20,7 @@ mkdir /mnt/starkos
 
 mount /dev/sda2 /mnt/starkos
 
-- EFI system con GPT. EFI system requiere una partición adicional vfat para /boot/efi, creala primero.
+2 - EFI system con GPT. EFI system requiere una partición adicional vfat para /boot/efi, creala primero.
 
 cfdisk
 
@@ -136,7 +136,7 @@ stark install linux
 
 - Configurar un gestor de arranque, por ejemplo: grub.
 
-## BIOS:
+1 - BIOS:
 
 grub-install /dev/sdX
 
@@ -144,7 +144,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 Nota: “remplaza 'X' con tu partición de arranque”
 
-## EFI:
+2 - EFI:
 
 df -Th                                (para comprobar efivars)
 
