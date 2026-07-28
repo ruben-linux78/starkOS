@@ -42,7 +42,7 @@ swapon /dev/sda2
 
 - Extrae la imagen de starkOS en el punto de montaje elegido.
 
-tar xvJpf starkos-rootfs--x86_64.tar.xz -C /mnt/starkos
+tar xvJpf starkos-rootfs-version-x86_64.tar.xz -C /mnt/starkos
 
 - Entrar desde chroot.
 
