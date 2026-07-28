@@ -1,12 +1,12 @@
 ## StarkOS GNU/Linux instalación:
 
-Arranca desde un ISO Live, preferiblemente de StarkOS.
+-Arranca desde un ISO Live, preferiblemente de StarkOS.
 
-Descarga el último rootfs tarball con SysV, Runit o S6.
+-Descarga el último rootfs tarball con SysV, Runit o S6.
 
-Crea y prepara las particiones: BIOS system con MBR.
+-Crea y prepara las particiones: BIOS system con MBR.
 
-# cfdisk
+cfdisk
 
 mkswap /dev/sda1
 
