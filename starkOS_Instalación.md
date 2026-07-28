@@ -1,10 +1,10 @@
 ## StarkOS GNU/Linux instalación:
 
--Arranca desde un ISO Live, preferiblemente de StarkOS.
+- Arranca desde un ISO Live, preferiblemente de StarkOS.
 
--Descarga el último rootfs tarball con SysV, Runit o S6.
+- Descarga el último rootfs tarball con SysV, Runit o S6.
 
--Crea y prepara las particiones: BIOS system con MBR.
+- Crea y prepara las particiones: BIOS system con MBR.
 
 cfdisk
 
@@ -12,13 +12,13 @@ mkswap /dev/sda1
 
 mkfs.ext4 -L StarkOS /dev/sda2
 
-Crea un directorio para montar la partición creada y monta esta ahí.
+- Crea un directorio para montar la partición creada y monta esta ahí.
 
 mkdir /mnt/starkos
 
 mount /dev/sda2 /mnt/starkos
 
-EFI system con GPT. EFI system requiere una partición adicional vfat para /boot/efi, creala primero.
+- EFI system con GPT. EFI system requiere una partición adicional vfat para /boot/efi, creala primero.
 
 cfdisk
 
@@ -28,7 +28,7 @@ mkswap /dev/sda2
 
 mkfs.ext4 -L StarkOS /dev/sda3
 
-Crea los directorios para montar /root and /boot/efi.
+- Crea los directorios para montar /root and /boot/efi.
 
 mkdir -pv /mnt/starkos/boot/efi
 
@@ -38,13 +38,13 @@ mount /dev/sda1 /mnt/starkos/boot/efi
 
 swapon /dev/sda2
 
-Extrae la imagen de starkOS en el punto de montaje elegido.
+- Extrae la imagen de starkOS en el punto de montaje elegido.
 
 tar xvJpf starkos-rootfs--x86_64.tar.xz -C /mnt/starkos
 
-Entrar desde chroot.
+- Entrar desde chroot.
 
-Montar y preparar los directorios dentro de la imagen de starkOS desconprimida, para un correcto chroot.
+- Montar y preparar los directorios dentro de la imagen de starkOS desconprimida, para un correcto chroot.
 
 mount -v --bind /dev /mnt/starkos/dev
 
@@ -62,11 +62,11 @@ cp -L /etc/resolv.conf /mnt/starkos/etc/
 
 chroot /mnt/starkos /bin/bash
 
-Configuración del sistema: hostname, timezone, clock, font, keymap y daemon:
+- Configuración del sistema: hostname, timezone, clock, font, keymap y daemon:
 
 vim /etc/rc.conf
 
-Configurar el directorio /etc/fstab.
+- Configurar el directorio /etc/fstab.
 
 vim /etc/fstab
 
