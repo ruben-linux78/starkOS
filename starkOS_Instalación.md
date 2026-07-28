@@ -70,13 +70,16 @@ vim /etc/rc.conf
 
 vim /etc/fstab
 
-# <device> <dir> <type> <options> <dump> <fsck>
+- <device> <dir> <type> <options> <dump> <fsck>
 PARTUUID=C306-F008 /boot/efi vfat defaults 0 2
+
 PARTUUID=d28dd521-a874-4939-aacb-1f740102bbac none swap pri=1 0 0
+
 PARTUUID=2cfac6a6-9670-45fe-a6ab-11735228ff4f / ext4 defaults 1 1
+
 tmpfs /tmp tmpfs rw,nosuid,noatime,nodev,mode=1777,size=2G 0 0
 
-Configurar zona horaria.
+- Configurar zona horaria.
 
 ln -sf /usr/share/zoneinfo/Region/City /etc/localetime
 
