@@ -1,4 +1,4 @@
-## StarkOS GNU/Linux instalación:
+## StarkOS GNU/Linux instalación: https://stark-os.codeberg.page/index.html
 
 - Arranca desde un ISO Live, preferiblemente de StarkOS.
 
@@ -10,9 +10,9 @@
 
 cfdisk
 
-mkswap /dev/sda1
+mkswap -L swap /dev/sda1
 
-mkfs.ext4 -L StarkOS /dev/sda2
+mkfs.ext4 -L starkOS /dev/sda2
 
 - Crea un directorio para montar la partición creada y monta esta ahí.
 
@@ -24,11 +24,11 @@ mount /dev/sda2 /mnt/starkos
 
 cfdisk
 
-mkfs.vfat /dev/sda1
+mkfs.vfat -n boot /dev/sda1
 
-mkswap /dev/sda2
+mkswap -L swap /dev/sda2
 
-mkfs.ext4 -L StarkOS /dev/sda3
+mkfs.ext4 -L starkOS /dev/sda3
 
 - Crea los directorios para montar /root and /boot/efi.
 
