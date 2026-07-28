@@ -32,6 +32,8 @@ mkfs.ext4 -L starkOS /dev/sda3
 
 - Crea los directorios para montar /root and /boot/efi.
 
+mkdir /mnt/starkos
+
 mount /dev/sda3 /mnt/starkos
 
 mkdir -pv /mnt/starkos/boot/efi
