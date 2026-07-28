@@ -112,11 +112,11 @@ chmod 755 /
 
 - Añadir un usuario.
 
-useradd -m -G users,wheel,audio,video -s /bin/bash
+useradd -m -G users,wheel,audio,video -s /bin/bash <usuario>
 
 - Crear un password para el nuevo asuario.
 
-passwd
+passwd <usuario>
 
 - Sincronizar repositorios.
 
@@ -152,9 +152,11 @@ mountpoint /sys/firmware/efi/efivars  (comprobar si tienes efivars)
 
 - Montar el directorio efivars.
 
-mount -v -t efivarfs efivarfs /sys/firmware/efi/efivars
+mount -v -t efivarfs none /sys/firmware/efi/efivars
 
 - Instala el paquete 'grub-efi'.
+
+stark install grub-efi
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=starkos
 
