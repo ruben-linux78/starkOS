@@ -4,7 +4,9 @@
 
 - Descarga el último rootfs tarball con SysV, Runit o S6.
 
-- Crea y prepara las particiones: BIOS system con MBR.
+- Crea y prepara las particiones:
+
+- BIOS system con MBR.
 
 cfdisk
 
