@@ -66,11 +66,10 @@ chroot /mnt/starkos /bin/bash
 
 vim /etc/rc.conf
 
-- Configurar el directorio /etc/fstab.
+- Configurar el directorio /etc/fstab, ver ejemplo.
 
 vim /etc/fstab
 
-- <device> <dir> <type> <options> <dump> <fsck>
 PARTUUID=C306-F008 /boot/efi vfat defaults 0 2
 
 PARTUUID=d28dd521-a874-4939-aacb-1f740102bbac none swap pri=1 0 0
@@ -83,7 +82,7 @@ tmpfs /tmp tmpfs rw,nosuid,noatime,nodev,mode=1777,size=2G 0 0
 
 ln -sf /usr/share/zoneinfo/Region/City /etc/localetime
 
-Configurar reloj del sistema.
+- Configurar reloj del sistema.
 
 hwclock --systohc
 
@@ -91,17 +90,17 @@ Configurar locales.
 
 vim /etc/locales
 
-Descomentar el deseado y ejecutar comando "genlocales".
+- Descomentar el deseado y ejecutar comando "genlocales".
 
 genlocales
 
-Crear nombre del sistema y configurar red local.
+- Crear nombre del sistema y configurar red local.
 
 vim /etc/host
 
 vim /etc/hosts
 
-Configurar un root password.
+- Configurar un root password.
 
 passwd
 
@@ -109,31 +108,31 @@ chown root:root /
 
 chmod 755 /
 
-Añadir un usuario.
+- Añadir un usuario.
 
 useradd -m -G users,wheel,audio,video -s /bin/bash
 
-Crear un password para el nuevo asuario.
+- Crear un password para el nuevo asuario.
 
 passwd
 
-Sincronizar repositorios.
+- Sincronizar repositorios.
 
 portsync -r
 
 stark sync
 
-Actualizar el sistema.
+- Actualizar el sistema.
 
 stark sysup
 
-Instalación del Kernel.
+- Instalación del Kernel.
 
 stark install linux
 
-Nota: “remplaza 'linux' por 'linux-lts' si prefieres la versión lts”
+- Nota: “remplaza 'linux' por 'linux-lts' si prefieres la versión lts”
 
-Configurar un gestor de arranque, por ejemplo: grub.
+- Configurar un gestor de arranque, por ejemplo: grub.
 
 ## BIOS:
 
@@ -145,25 +144,25 @@ Nota: “remplaza 'X' con tu partición de arranque”
 
 ## EFI:
 
-df -Th                              (para comprobar efivars)
+df -Th                                (para comprobar efivars)
 
 mountpoint /sys/firmware/efi/efivars  (comprobar si tienes efivars)
 
-Montar el directorio efivars.
+- Montar el directorio efivars.
 
 mount -v -t efivarfs efivarfs /sys/firmware/efi/efivars
 
-Instala el paquete 'grub-efi'.
+- Instala el paquete 'grub-efi'.
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=starkos
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
-Salir del entorno de chroot.
+- Salir del entorno de chroot.
 
 exit
 
-Desmontar directorios de /mnt antes de salir de la instalación.
+- Desmontar directorios de /mnt/starkos antes de salir de la instalación.
 
 umount -v /mnt/starkos/dev/pts
 
@@ -177,6 +176,6 @@ umount -v /mnt/starkos/sys
 
 umount -R /mnt/starkos
 
-Ahora puedes reiniciar la máquina, starkOS GNU/Linux deberia de ser un sistema arrancable.
+- Ahora puedes reiniciar la máquina, starkOS GNU/Linux debería de ser un sistema arrancable.
 
 reboot
