@@ -114,11 +114,11 @@ chmod 755 /
 
 - Añadir un usuario.
 
-useradd -m -G users,wheel,audio,video -s /bin/bash <usuario>
+useradd -m -G users,wheel,audio,video -s /bin/bash "usuario"
 
 - Crear un password para el nuevo asuario.
 
-passwd <usuario>
+passwd "usuario"
 
 - Sincronizar repositorios.
 
