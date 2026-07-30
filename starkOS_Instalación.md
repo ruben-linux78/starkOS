@@ -108,6 +108,8 @@ vim /etc/hosts
 
 passwd
 
+- Establecer permisos para la cuenta de root.
+
 chown root:root /
 
 chmod 755 /
