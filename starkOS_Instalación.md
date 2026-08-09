@@ -98,6 +98,10 @@ vim /etc/locales
 
 genlocales
 
+- Cnfigurar idioma local para Español export LANG=es_ES.UTF-8 dentro de /etc/locale.conf
+
+vim /etc/locale.conf
+
 - Crear nombre del sistema y configurar red local.
 
 vim /etc/host
