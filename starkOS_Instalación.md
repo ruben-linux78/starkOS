@@ -98,7 +98,7 @@ vim /etc/locales
 
 genlocales
 
-- Configurar idioma local en Español export LANG=es_ES.UTF-8 dentro de /etc/locale.conf
+- Configurar idioma local en Español LANG=es_ES.UTF-8 dentro de /etc/locale.conf
 
 vim /etc/locale.conf
 
